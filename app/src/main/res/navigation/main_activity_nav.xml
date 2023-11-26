@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.kurt.todo.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/anasayfaKayitGecis"
+            app:destination="@id/notKayitFragment" />
+        <action
+            android:id="@+id/anasayfaDetayGecis"
+            app:destination="@id/notDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notDetayFragment"
+        android:name="com.kurt.todo.ui.fragment.NotDetayFragment"
+        android:label="fragment_not_detay"
+        tools:layout="@layout/fragment_not_detay" >
+        <argument
+            android:name="todo"
+            app:argType="com.kurt.todo.data.entity.Todo" />
+    </fragment>
+    <fragment
+        android:id="@+id/notKayitFragment"
+        android:name="com.kurt.todo.ui.fragment.NotKayitFragment"
+        android:label="fragment_not_kayit"
+        tools:layout="@layout/fragment_not_kayit" />
+</navigation>
